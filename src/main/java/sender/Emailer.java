@@ -5,9 +5,10 @@ import javax.mail.internet.*;
 import java.io.IOException;
 import java.util.Properties;
 
+import ISender.ISender;
 import mini.*;
 
-public abstract class Emailer {
+public abstract class Emailer implements ISender {
 
     protected static final String EMAIL_MINIMARKT = "minimarkt@dpgmedia.nl";
 

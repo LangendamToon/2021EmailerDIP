@@ -1,5 +1,6 @@
 package processor;
 
+import ISender.ISender;
 import mini.MiniAD;
 import org.json.JSONObject;
 
@@ -25,7 +26,7 @@ public class MiniProcessorAD extends MiniProcessor {
     }
 
     @Override
-    protected Emailer getEmailer () {
+    protected ISender getSender () {
         return new EmailerAD();
     }
 }

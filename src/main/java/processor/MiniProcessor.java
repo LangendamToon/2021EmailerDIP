@@ -1,5 +1,6 @@
 package processor;
 
+import ISender.ISender;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -34,14 +35,14 @@ public abstract class MiniProcessor implements Observer {
     }
 
     protected abstract Mini getMini (JSONObject json);
-    protected abstract Emailer getEmailer ();
+    protected abstract ISender getSender ();
 
     public void update (Observable o, Object arg) {
 
         if (mustBePlacedInThisTitle ((JSONObject) arg)) {
 
             Mini mini = getMini ((JSONObject) arg);
-            Emailer sender = getEmailer ();
+            ISender sender = getSender();
             sender.send (mini);
         }
     }

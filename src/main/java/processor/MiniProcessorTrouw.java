@@ -1,5 +1,6 @@
 package processor;
 
+import ISender.ISender;
 import org.json.JSONObject;
 
 import receiver.MarktplaatsReceiver;
@@ -23,7 +24,7 @@ public class MiniProcessorTrouw extends MiniProcessor {
     }
 
     @Override
-    public Emailer getEmailer () {
+    public ISender getSender () {
         return new EmailerTrouw ();
     }
 }
